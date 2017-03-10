@@ -3,47 +3,50 @@
 <head>
 	<meta charset="utf-8">
 	<title>Calculo Basal</title>
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css">
 </head>
 <body>
-	<h1>Seja bem-vindo a calculadora de indice basal em PHP</h1>
-	<aside id="barra-direita">
-		<h2>alimentos menos caloricos:</h2>
-		[imagens]
-		subs
-		[imagens]
-		subs
-		[imagens]
-		subs
-	</aside>
+	<div id="interface">
+		<header id="cabecalho">
+			<h1>CALCULADORA DE TAXA METABÓLICA BASAL</h1>
+		</header>
+		<aside id="borda-esquerda">
+			<h2>BAIXO TEOR CALORICO</h2>
+			[imagens]<br/>
+			subs<br/>
+			[imagens]<br/>
+			subs<br/>
+			[imagens]<br/>
+			subs<br/>
+		</aside>
+		<aside id="borda-direita">
+			<h2>ALTO TEOR CALÓRICO</h2>
+			[imagens]<br/>
+			subs<br/>
+			[imagens]<br/>
+			subs<br/>
+			[imagens]<br/>
+			subs<br/>
+		</aside>
+		<div id="centro">
+			<div id="calculo">
+				<h2>Calculadora Basal</h2>
+				<p>digite seu peso:</p>
+				<p>digite sua idade:</p>
+				<p>digite sua altura em CM:</p>
+				<p>digite o seu grau de atividade fisica:</p>
+			</div>
 
-	<div id="calculo">
-	<h2>calculadora Basal</h2>
-	<p>digite seu peso:</p>
-	<p>digite sua idade:</p>
-	<p>digite sua altura em CM:</p>
-	<p>digite o seu grau de atividade fisica:</p>
+			<div id="resultado">
+				<h2>Resultado:</h2>
+				<p>quantidade de caloria para emagrecer:</p>
+				<p>quantidade de caloria para manter o peso:</p>
+				<p>quantidade de caloria para engordar:</p>
+			</div>
+		</div>
 	</div>
-
-	<div id="resultado">
-	<h2>resultado:</h2>
-	<p>quantidade de caloria para emagrecer:</p>
-	<p>quantidade de caloria para manter o peso:</p>
-	<p>quantidade de caloria para engordar:</p>
-	</div>
-
-	<aside id="barra-esquerda">
-	<h2>alimentos mais caloricos:</h2>
-	[imagens]
-	subs
-	[imagens]
-	subs
-	[imagens]
-	subs
-	</aside>
-
 	<footer id="rodape">
-	<p>Este site foi construido por Felipe Gonçalves dos Santos</p>
+		<p>Este site foi construido por Felipe Gonçalves dos Santos</p>
 	</footer>
 </body>
 </html>
