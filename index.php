@@ -12,20 +12,20 @@
 		</header>
 		<aside id="borda-esquerda">
 			<h2>BAIXO TEOR CALORICO</h2>
-			[imagens]<br/>
+			<img src="_imagens/acelga.jpg"/>
 			subs<br/>
-			[imagens]<br/>
+			<img src="_imagens/iogurte.jpg"/>
 			subs<br/>
-			[imagens]<br/>
+			<img src="_imagens/abacaxi.jpg"/>
 			subs<br/>
 		</aside>
 		<aside id="borda-direita">
 			<h2>ALTO TEOR CALÓRICO</h2>
-			[imagens]<br/>
+			<img src="_imagens/arroz.jpg"/>
 			subs<br/>
-			[imagens]<br/>
+			<img src="_imagens/queijo.jpg"/>
 			subs<br/>
-			[imagens]<br/>
+			<img src="_imagens/avela.jpg"/>
 			subs<br/>
 		</aside>
 		<div id="centro">
@@ -46,7 +46,7 @@
 		</div>
 	</div>
 	<footer id="rodape">
-		<p>Este site foi construido por Felipe Gonçalves dos Santos</p>
+		<p>Este site foi construido por <a href="https://github.com/felipegsantos15" target="_blank"><b>Felipe Gonçalves dos Santos</b></a></p>
 	</footer>
 </body>
 </html>
