@@ -12,21 +12,41 @@
 		</header>
 		<aside id="borda-esquerda">
 			<h2>BAIXO TEOR CALORICO</h2>
-			<img src="_imagens/acelga.jpg"/>
-			subs<br/>
+			<p>em 100 gramas</p>
+			<img src="_imagens/acelga.jpg">
+			<h3>
+				Acelga<br/>
+				25 Kcal
+			</h3>
 			<img src="_imagens/iogurte.jpg"/>
-			subs<br/>
+			<h3>
+				Iogurte desnatado<br/>
+				37 Kcal
+			</h3>
 			<img src="_imagens/abacaxi.jpg"/>
-			subs<br/>
+			<h3>
+				Abacaxi<br/>
+				50 Kcal
+			</h3>
 		</aside>
 		<aside id="borda-direita">
 			<h2>ALTO TEOR CALÓRICO</h2>
+			<p>em 100 gramas</p>
 			<img src="_imagens/arroz.jpg"/>
-			subs<br/>
+			<h3>
+				Arroz integral<br/>
+				350 Kcal
+			</h3>
 			<img src="_imagens/queijo.jpg"/>
-			subs<br/>
+			<h3>
+				Queijo minas Fresco<br/>
+				373kcal
+			</h3>
 			<img src="_imagens/avela.jpg"/>
-			subs<br/>
+			<h3>
+				Avelã<br/>
+				633 Kcal
+			</h3>
 		</aside>
 		<div id="centro">
 			<div id="calculo">
