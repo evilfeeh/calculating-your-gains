@@ -65,14 +65,14 @@
 						<input type="radio" name="sexo" value="0" checked>masculino</input>
 						<input type="radio" name="sexo" value="1">feminino</input>
 					</fieldset>
-					<p>Digite seu peso:<input type="text" name="peso"/></p>
-					<p>Digite sua idade:<input type="text" name="idade"/></p>
-					<p>Digite sua altura em centimentros:<input type="text" name="altura"/></p>
-					<p>Digite seu grau de atividade fisica:<select type="text" name="atividade_fisica"/>
-						<option name="sed" value="0">sedentario</option>
-						<option name="lev" value="600">atividade leve 3xSem</option>
-						<option name="mod" value="1000">atividade moderada 5xSem</option>
-						<option name="pes" value="1200">atividade pesada 6xSem</option>
+					<p>Peso: <input type="text" name="peso" placeholder="quilos"/></p>
+					<p>Idade:<input type="text" name="idade" placeholder="anos" /></p>
+					<p>Altura:<input type="text" name="altura" placeholder="centímetros"/></p>
+					<p>Grau de atividade fisica:<select type="text" name="atividade_fisica"/>
+						<option name="sed" value="200">Sedentário</option>
+						<option name="lev" value="600">Atividade leve 3 x Sem</option>
+						<option name="mod" value="1000">Atividade moderada 5 x Sem</option>
+						<option name="pes" value="1200">Atividade pesada 6 x Sem</option>
 					</select></p>
 					<p><input type="submit" name="Calcular" value="calcular"></p>
 				</form>
@@ -80,21 +80,33 @@
 				<?php
 				$sexo = isset($_POST["sexo"])?$_POST["sexo"]:[""];
 				$peso = isset($_POST["peso"])?$_POST["peso"]:[""];
-				$idade = isset($_POST["idade"])?$_POST["idade"]:[""];
-				$altura = isset($_POST["altura"])?$_POST["altura"]:[""]; 
+				$idade = isset($_POST["idade"])?$_POST["idade"]:["0"];
+				$altura = isset($_POST["altura"])?$_POST["altura"]:["0"]; 
 				$atividade_fisica = isset($_POST["atividade_fisica"])?$_POST["atividade_fisica"]:[""];
 				isset($manter);
 
-				
-				if($sexo == "0"){
-					$manter = $atividade_fisica+ (66+($peso *13.7)+($altura * 5.0)-($idade* 6.8));
-				}else{
-					$manter = $atividade_fisica+ (665+($peso*9.6)+($altura*1.8)-($idade*4.7));
+				if($peso == null)
+				{
+					$manter = "";
+					$emagrecer = "";
+					$engordar = "";
 				}
+				else
+				{
+					if($sexo == "0")
+					{
+						$manter = $atividade_fisica+ (66+($peso *13.7)+($altura * 5.0)-($idade* 6.8));
+						$emagrecer= $manter - 500;
+						$engordar = $manter + 500;
+					}else
+					{
+						$manter = $atividade_fisica+ (665+($peso*9.6)+($altura*1.8)-($idade*4.7));
+						$emagrecer= $manter - 500;
+						$engordar = $manter + 500;
+					}
+				}
+					
 				
-				
-				$emagrecer= $manter - 500;
-				$engordar = $manter + 500;
 				
 				?>
 
@@ -102,9 +114,9 @@
 
 			<div id="resultado">
 				<h2>Resultado:</h2>
-				<p>quantidade de caloria para emagrecer:<?php echo "$emagrecer"; ?></p>
-				<p>quantidade de caloria para manter o peso:<?php echo "$manter"; ?></p>
-				<p>quantidade de caloria para engordar: <?php echo "$engordar"; ?></p>
+				<p>Caloria para emagrecer:<?php echo "$emagrecer"; ?></p>
+				<p>Caloria para manter o peso:<?php echo "$manter"; ?></p>
+				<p>Caloria para engordar: <?php echo "$engordar"; ?></p>
 			</div>
 		</div>
 	</div>
