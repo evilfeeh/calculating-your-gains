@@ -52,14 +52,14 @@
 			<div id="calculo">
 				<h2>Calculadora Basal</h2>
 
-				<?php
+			<?php
 					$sexo =0;
 					$peso =0;
 					$idade =0;
 					$altura =0;
 					$atividade_fisica =0;
 
-				?>
+			?>
 				<form method="post" action="">
 					<fieldset>
 						<input type="radio" name="sexo" value="0" checked>masculino</input>
@@ -77,7 +77,7 @@
 					<p><input type="submit" name="Calcular" value="calcular"></p>
 				</form>
 				
-				<?php
+			<?php
 				$sexo = isset($_POST["sexo"])?$_POST["sexo"]:[""];
 				$peso = isset($_POST["peso"])?$_POST["peso"]:[""];
 				$idade = isset($_POST["idade"])?$_POST["idade"]:["0"];
@@ -105,13 +105,8 @@
 						$engordar = $manter + 500;
 					}
 				}
-					
-				
-				
-				?>
-
+			?>
 			</div>
-
 			<div id="resultado">
 				<h2>Resultado:</h2>
 				<p>Caloria para emagrecer:<?php echo "$emagrecer"; ?></p>

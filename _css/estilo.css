@@ -19,7 +19,7 @@ h3{
 	font-size: 11pt;
 	float: right;
 	text-align: left;
-	width: 125px;
+	width: 115px;
 }
 
 p{
@@ -36,6 +36,9 @@ a{
 
 img{
 	width: 120px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+
 }
 /*layout da pagina*/
 
