@@ -1,14 +1,23 @@
 import personData from "./person-data";
 
+interface score {
+  weight: number;
+  height: number;
+  age: number;
+}
+
 export default interface calculateClass {
   weightMultiplicator: number;
   heightMultiplicator: number;
   ageMultiplicator: number;
   kaloriesBase: number; 
-  data: personData;
+  person: personData;
   factor: number;
+  activityLevel: number;
+  score: score;
 
-  toKeep: (sexo: "male" | "female") => number;
-  toLose: (sexo: "male" | "female") => number;
-  toGain: (sexo: "male" | "female") => number;
+  toKeep: () => number;
+  toLose: () => number;
+  toGain: () => number;
+  _calculateScore(): void
 }
