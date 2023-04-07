@@ -1,4 +1,4 @@
-import personData from "./personData";
+import personData from "./person-data";
 
 export default interface calculateClass {
   weightMultiplicator: number;
@@ -8,7 +8,7 @@ export default interface calculateClass {
   data: personData;
   factor: number;
 
-  keep: (sexo: "male" | "female") => number;
-  lose: (sexo: "male" | "female") => number;
-  gain: (sexo: "male" | "female") => number;
+  toKeep: (sexo: "male" | "female") => number;
+  toLose: (sexo: "male" | "female") => number;
+  toGain: (sexo: "male" | "female") => number;
 }
