@@ -10,7 +10,7 @@ export default interface calculateClass {
   weightMultiplicator: number;
   heightMultiplicator: number;
   ageMultiplicator: number;
-  kaloriesBase: number; 
+  caloriesBase: number; 
   person: personData;
   factor: number;
   activityLevel: number;

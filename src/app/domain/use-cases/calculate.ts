@@ -8,9 +8,9 @@ export default class Calculate implements calculateClass {
   weightMultiplicator: number
   heightMultiplicator: number;
   ageMultiplicator: number;
-  kaloriesBase: 500; 
+  caloriesBase: 500; 
   factor: number;
-  activityLevel: number;
+  activityLevel: any;
   score: {
     weight: number;
     height: number;
@@ -29,15 +29,15 @@ export default class Calculate implements calculateClass {
 
   toKeep () {
     let scoreWithFactor = this.factor + this.score.weight + this.score.height + this.score.age
-    return phisicalActivityLevel[this.activityLevel] + scoreWithFactor
+    return phisicalActivityLevel[this.activityLevel as keyof {}] + scoreWithFactor
   }
 
   toLose () {
-    return this.toKeep() - this.kaloriesBase
+    return this.toKeep() - this.caloriesBase
   }
 
   toGain () {
-    return this.toKeep() + this.kaloriesBase
+    return this.toKeep() + this.caloriesBase
   }
 
   _calculateScore () {

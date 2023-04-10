@@ -1,8 +1,8 @@
 const phisicalActivityLevel = {
-  "noActivity": 200,
-  "lightActivity": 600,
-  "averageActivity": 1000,
-  "heavyAvtivity": 1200,
+  "none": 200,
+  "light": 600,
+  "average": 1000,
+  "heavy": 1200,
 }
 
 export default phisicalActivityLevel

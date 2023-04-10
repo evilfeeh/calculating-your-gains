@@ -5,6 +5,8 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded())
+app.use(express.static('public'))
+
 
 app.post('/calculate', (req, res) => {
   const { personData } = req.body
