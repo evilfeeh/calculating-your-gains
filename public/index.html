@@ -15,7 +15,8 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-image" data-bs-theme="dark" style="background-image: url('imagens/arnold.jpg');height:100vh;background-repeat: no-repeat; background-attachment:fixed; background-size:cover;">
+<body class="bg-image" data-bs-theme="dark"
+    style="background-image: url('imagens/arnold.jpg');height:100vh;background-repeat: no-repeat; background-attachment:fixed; background-size:cover;">
     <div class="container">
         <h2 class="gx-5">
             Calculating your gains
@@ -25,31 +26,35 @@
             <div class="col col-lg-10">
                 <div class="float-start text-wrap text-uppercase">
                     <h2 class="fst-italic">Are you ready to grow?</h1>
-                    <p class="fw-bold">so you come to the right place</p>
+                        <p class="fw-bold">so you come to the right place</p>
                 </div>
             </div>
             <div class="col"></div>
         </div>
         <div class="row">
+            <div class="col">
+                <h3 class="text-center">First of all. We need understand how much calories do you need to ingest per day.</h3>
+            </div>
+        </div>
+        <div class="row">
             <div class="col"></div>
             <div class="col-lg-8">
-                <h3 class="text-center">First of all. We need understand how much calories do you need to ingest per day.</h3>
                 <form method="post" action="">
                     <p>Complete the current form before we move on</p>
                     <div class="mb-3">
-                        <label for="gender" class="form-label" >What is your birth gender?</label>
+                        <label for="gender" class="form-label">What is your birth gender?</label>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="femaleGenderRadio" id="femaleInput">
                             <label class="form-check-label" for="femaleGenderRadio">
-                              Female
+                                Female
                             </label>
-                          </div>
-                          <div class="form-check">
+                        </div>
+                        <div class="form-check">
                             <input class="form-check-input" type="radio" name="maleGenderRadio" id="maleInput" checked>
                             <label class="form-check-label" for="maleGenderRadio">
-                              Male
+                                Male
                             </label>
-                          </div>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="weight" class="form-label">How's your weight:</label>
@@ -70,73 +75,99 @@
                             <option value="600">Atividade leve - 3x semana</option>
                             <option value="1000">Atividade moderada - 5x semana</option>
                             <option value="1200">Atividade pesada - 6x semana</option>
-                          </select>
+                        </select>
                     </div>
-                    <p><input type="submit" name="Calcular" value="calcular"></p>    
+                    <p><input type="submit" name="Calcular" value="calcular"></p>
                 </form>
 
                 <div id="resultado">
-                    <h2>Here are your results:</h2>
-                    <p>{{calories}} per day to lose weight</p>
-                    <p>{{calories}} per day to keep your weight</p>
-                    <p>{{caloriess}} per day to gain weight</p>
+                    <div class="modal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Here are your results:</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>{{calories}} per day to lose weight</p>
+                                    <p>{{calories}} per day to keep your weight</p>
+                                    <p>{{caloriess}} per day to gain weight</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col"></div>
         </div>
         <div class="row">
-            <div class="col"></div>
-            <div class="col col-lg-8">
-                But this not mean that you'll lose fat and gain muscle. This calcs only serves to watch your food
-
-                // parte 2
-                <aside id="borda-esquerda">
-                    <h2>BAIXO TEOR CALORICO</h2>
-                    <p>em 100 gramas</p>
-                    <img src="imagens/acelga.jpg">
-                    <h3>
-                        Acelga<br />
-                        25 Kcal
-                    </h3>
-                    <img src="imagens/iogurte.jpg" />
-                    <h3>
-                        Iogurte desnatado<br />
-                        37 Kcal
-                    </h3>
-                    <img src="imagens/abacaxi.jpg" />
-                    <h3>
-                        Abacaxi<br />
-                        50 Kcal
-                    </h3>
-                </aside>
-                <aside id="borda-direita">
-                    <h2>ALTO TEOR CALÓRICO</h2>
-                    <p>em 100 gramas</p>
-                    <img src="imagens/arroz.jpg" />
-                    <h3>
-                        Arroz integral<br />
-                        350 Kcal
-                    </h3>
-                    <img src="imagens/queijo.jpg" />
-                    <h3>
-                        Queijo minas Fresco<br />
-                        373kcal
-                    </h3>
-                    <img src="imagens/Avela.jpg" />
-                    <h3>
-                        Avelã<br />
-                        633 Kcal
-                    </h3>
-                </aside>
+            <div class="col">
+                <h3>But this not mean that you'll lose fat and gain muscle. This calcs only serves to watch your food
+                </h3>
             </div>
-            <div class="col"></div>
         </div>
         <div class="row">
             <div class="col"></div>
             <div class="col col-lg-8">
-                <p>Este site foi construido por <a href="https://github.com/evilfeeh" target="_blank"><b>Felipe Gonçalvesdos Santos</b></a></p>
+                <div class="centered card-group mb-3 col mb-3 mb-sm-0">
+                    <div class="card" style="width: 50rem;">
+                        <img src="imagens/acelga.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Acelga</h5>
+                            <p class="card-text">25 Kcal</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 50rem;">
+                        <img src="imagens/iogurte.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Iogurte desnatado</h5>
+                            <p class="card-text">37 Kcal</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 50rem;">
+                        <img src="imagens/abacaxi.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Abacaxi</h5>
+                            <p class="card-text">50 Kcal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="centered card-group mb-3 col mb-3 mb-sm-0">
+                    <div class="card" style="width: 50rem;">
+                        <img src="imagens/arroz.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Arroz integral</h5>
+                            <p class="card-text">25 Kcal</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 50rem;">
+                        <img src="imagens/queijo.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Iogurte desnatado</h5>
+                            <p class="card-text">37 Kcal</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 50rem;">
+                        <img src="imagens/Avela.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Abacaxi</h5>
+                            <p class="card-text">50 Kcal</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-8">
+                <p>Este site foi construido por <a href="https://github.com/evilfeeh" target="_blank"><b>Felipe Gonçalves dos Santos</b></a></p>
+            </div>
         </div>
     </div>
 </body>
