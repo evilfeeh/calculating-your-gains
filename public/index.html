@@ -15,19 +15,27 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-image" data-bs-theme="dark"
-    style="background-image: url('imagens/arnold.jpg');height:100vh;background-repeat: no-repeat; background-attachment:fixed; background-size:cover;">
-    <div class="container">
-        <h2 class="gx-5">
+<body class="bg-image" data-bs-theme="dark">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="imagens/emojii.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             Calculating your gains
-        </h2>
+          </a>
+        </div>
+    </nav>
+    <div class="position-relative overflow-hidden p-5 p-md-7 m-md-5 text-center">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h2 class="fst-italic">Are you ready to grow?</h1>
+                <div class="text-wrap text-uppercase">
+                <p class="fw-bold">so you come to the right place</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
         <div class="row">
             <div class="col"></div>
-            <div class="col col-lg-10">
-                <div class="float-start text-wrap text-uppercase">
-                    <h2 class="fst-italic">Are you ready to grow?</h1>
-                        <p class="fw-bold">so you come to the right place</p>
-                </div>
+            <div class="col col-md-8">
             </div>
             <div class="col"></div>
         </div>
@@ -39,46 +47,52 @@
         <div class="row">
             <div class="col"></div>
             <div class="col-lg-8">
-                <form method="post" action="">
-                    <p>Complete the current form before we move on</p>
-                    <div class="mb-3">
-                        <label for="gender" class="form-label">What is your birth gender?</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="femaleGenderRadio" id="femaleInput">
-                            <label class="form-check-label" for="femaleGenderRadio">
-                                Female
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="maleGenderRadio" id="maleInput" checked>
-                            <label class="form-check-label" for="maleGenderRadio">
-                                Male
-                            </label>
-                        </div>
+                <div class="card">
+                    <div class="card-header">
+                        Complete the current form before we move on
                     </div>
-                    <div class="mb-3">
-                        <label for="weight" class="form-label">How's your weight:</label>
-                        <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" />
+                    <div class="card-body">
+                        <form method="post" action="">
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">What is your birth gender?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="femaleGenderRadio" id="femaleInput">
+                                    <label class="form-check-label" for="femaleGenderRadio">
+                                        Female
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="maleGenderRadio" id="maleInput" checked>
+                                    <label class="form-check-label" for="maleGenderRadio">
+                                        Male
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="weight" class="form-label">How's your weight:</label>
+                                <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="height" class="form-label">How's your height:</label>
+                                <input id="height" type="text" class="form-control" name="height" placeholder="CM" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="age" class="form-label">How old are you:</label>
+                                <input id="age" type="text" class="form-control" name="age" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Choose your activitity level:</label>
+                                <select id="age" class="form-select" aria-label="Default select example">
+                                    <option value="200">Sedentário</option>
+                                    <option value="600">Atividade leve - 3x semana</option>
+                                    <option value="1000">Atividade moderada - 5x semana</option>
+                                    <option value="1200">Atividade pesada - 6x semana</option>
+                                </select>
+                            </div>
+                            <p><input class="btn btn-primary" type="submit" name="Calcular" value="calcular"></p>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="height" class="form-label">How's your height:</label>
-                        <input id="height" type="text" class="form-control" name="height" placeholder="CM" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="age" class="form-label">How old are you:</label>
-                        <input id="age" type="text" class="form-control" name="age" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="age" class="form-label">Choose your activitity level:</label>
-                        <select id="age" class="form-select" aria-label="Default select example">
-                            <option value="200">Sedentário</option>
-                            <option value="600">Atividade leve - 3x semana</option>
-                            <option value="1000">Atividade moderada - 5x semana</option>
-                            <option value="1200">Atividade pesada - 6x semana</option>
-                        </select>
-                    </div>
-                    <p><input type="submit" name="Calcular" value="calcular"></p>
-                </form>
+                </div>
 
                 <div id="resultado">
                     <div class="modal" tabindex="-1">
