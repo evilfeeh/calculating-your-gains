@@ -24,76 +24,72 @@
           </a>
         </div>
     </nav>
-    <div class="position-relative overflow-hidden p-5 p-md-7 m-md-5 text-center">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h2 class="fst-italic">Are you ready to grow?</h1>
-                <div class="text-wrap text-uppercase">
-                <p class="fw-bold">so you come to the right place</p>
-            </div>
-        </div>
-    </div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col"></div>
-            <div class="col col-md-8">
+        <section class="position-relative overflow-hidden p-5 p-md-7 m-md-5 text-center">
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+                <h2 class="fst-italic">Are you ready to grow?</h1>
+                    <div class="text-wrap text-uppercase">
+                    <p class="fw-bold">so you come to the right place</p>
+                </div>
             </div>
-            <div class="col"></div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <h3 class="text-center">First of all. We need understand how much calories do you need to ingest per day.</h3>
-            </div>
-        </div>
-        <div class="row">
+        </section>
+        <section class="row">
             <div class="col"></div>
             <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-header">
-                        Complete the current form before we move on
-                    </div>
-                    <div class="card-body">
-                        <form method="post" action="">
-                            <div class="mb-3">
-                                <label for="gender" class="form-label">What is your birth gender?</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="femaleGenderRadio" id="femaleInput">
-                                    <label class="form-check-label" for="femaleGenderRadio">
-                                        Female
-                                    </label>
+                <h1 class="">First of all.</h1>
+                <h3>We need understand how much calories do you need to ingest per day.</h3>
+                <div class="position-relative overflow-hidden p-5 p-md-7 m-md-5">
+                    <div class="card">
+                        <div class="card-header">
+                            Complete the current form before we move on
+                        </div>
+                        <div class="card-body">
+                            <form method="post" action="">
+                                <div class="mb-3">
+                                    <label for="gender" class="form-label">What is your birth gender?</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="femaleGenderRadio" id="femaleInput">
+                                        <label class="form-check-label" for="femaleGenderRadio">
+                                            Female
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="maleGenderRadio" id="maleInput" checked>
+                                        <label class="form-check-label" for="maleGenderRadio">
+                                            Male
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="maleGenderRadio" id="maleInput" checked>
-                                    <label class="form-check-label" for="maleGenderRadio">
-                                        Male
-                                    </label>
+                                <div class="row">
+                                    <div class="col mb-3">
+                                        <label for="weight" class="form-label">How's your weight:</label>
+                                        <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" />
+                                    </div>
+                                    <div class="col mb-3">
+                                        <label for="height" class="form-label">How's your height:</label>
+                                        <input id="height" type="text" class="form-control" name="height" placeholder="CM" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="weight" class="form-label">How's your weight:</label>
-                                <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="height" class="form-label">How's your height:</label>
-                                <input id="height" type="text" class="form-control" name="height" placeholder="CM" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="age" class="form-label">How old are you:</label>
-                                <input id="age" type="text" class="form-control" name="age" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="age" class="form-label">Choose your activitity level:</label>
-                                <select id="age" class="form-select" aria-label="Default select example">
-                                    <option value="200">Sedentário</option>
-                                    <option value="600">Atividade leve - 3x semana</option>
-                                    <option value="1000">Atividade moderada - 5x semana</option>
-                                    <option value="1200">Atividade pesada - 6x semana</option>
-                                </select>
-                            </div>
-                            <p><input class="btn btn-primary" type="submit" name="Calcular" value="calcular"></p>
-                        </form>
+                                <div class="row">
+                                    <div class="col mb-3">
+                                        <label for="age" class="form-label">How old are you:</label>
+                                        <input id="age" type="text" class="form-control" name="age" />
+                                    </div>
+                                    <div class="col mb-3">
+                                        <label for="age" class="form-label">Choose your activitity level:</label>
+                                        <select id="age" class="form-select" aria-label="Default select example">
+                                            <option value="200">Sedentário</option>
+                                            <option value="600">Atividade leve - 3x semana</option>
+                                            <option value="1000">Atividade moderada - 5x semana</option>
+                                            <option value="1200">Atividade pesada - 6x semana</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <p><input class="btn btn-primary" type="submit" name="Calcular" value="calcular"></p>
+                            </form>
+                        </div>
                     </div>
                 </div>
-
                 <div id="resultado">
                     <div class="modal" tabindex="-1">
                         <div class="modal-dialog">
@@ -119,65 +115,63 @@
                 </div>
             </div>
             <div class="col"></div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <h3>But this not mean that you'll lose fat and gain muscle. This calcs only serves to watch your food
-                </h3>
-            </div>
-        </div>
-        <div class="row">
+        </section>
+        <section class="row">
             <div class="col"></div>
             <div class="col col-lg-8">
-                <div class="centered card-group mb-3 col mb-3 mb-sm-0">
-                    <div class="card" style="width: 50rem;">
-                        <img src="imagens/acelga.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Acelga</h5>
-                            <p class="card-text">25 Kcal</p>
+                <h1>What this means?</h1>
+                <h3>this not mean that you'll lose fat and gain muscle. This calcs only serves to watch your food</h3>
+                <div class="position-relative overflow-hidden p-5 p-md-7 m-md-5">
+                    <div class="centered card-group mb-3 col mb-3 mb-sm-0">
+                        <div class="card" style="width: 50rem;">
+                            <img src="imagens/acelga.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Acelga</h5>
+                                <p class="card-text">25 Kcal</p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 50rem;">
+                            <img src="imagens/iogurte.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Iogurte desnatado</h5>
+                                <p class="card-text">37 Kcal</p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 50rem;">
+                            <img src="imagens/abacaxi.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Abacaxi</h5>
+                                <p class="card-text">50 Kcal</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="card" style="width: 50rem;">
-                        <img src="imagens/iogurte.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Iogurte desnatado</h5>
-                            <p class="card-text">37 Kcal</p>
+                    <div class="centered card-group mb-3 col mb-3 mb-sm-0">
+                        <div class="card" style="width: 50rem;">
+                            <img src="imagens/arroz.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Arroz integral</h5>
+                                <p class="card-text">25 Kcal</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card" style="width: 50rem;">
-                        <img src="imagens/abacaxi.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Abacaxi</h5>
-                            <p class="card-text">50 Kcal</p>
+                        <div class="card" style="width: 50rem;">
+                            <img src="imagens/queijo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Iogurte desnatado</h5>
+                                <p class="card-text">37 Kcal</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="centered card-group mb-3 col mb-3 mb-sm-0">
-                    <div class="card" style="width: 50rem;">
-                        <img src="imagens/arroz.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Arroz integral</h5>
-                            <p class="card-text">25 Kcal</p>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 50rem;">
-                        <img src="imagens/queijo.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Iogurte desnatado</h5>
-                            <p class="card-text">37 Kcal</p>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 50rem;">
-                        <img src="imagens/Avela.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Abacaxi</h5>
-                            <p class="card-text">50 Kcal</p>
+                        <div class="card" style="width: 50rem;">
+                            <img src="imagens/Avela.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Abacaxi</h5>
+                                <p class="card-text">50 Kcal</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col"></div>
-        </div>
+        </section>
         <div class="row">
             <div class="col col-lg-8">
                 <p>Este site foi construido por <a href="https://github.com/evilfeeh" target="_blank"><b>Felipe Gonçalves dos Santos</b></a></p>
