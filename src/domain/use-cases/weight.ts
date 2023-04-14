@@ -1,9 +1,9 @@
 import phisicalActivityLevel from "../utils/phisical-activity-level"
-import calculateClass from "../interfaces/calculate-class"
+import WeightClass from "../interfaces/weight-class"
 import personData from "../interfaces/person-data"
 import multiplicator from "../utils/multiplicators"
 
-export default class Calculate implements calculateClass {
+export default class Weight implements WeightClass {
   person: personData
   weightMultiplicator: number
   heightMultiplicator: number;
