@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg" href="imagens/emojii.svg">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -34,11 +35,12 @@
             </div>
         </div>
     </header>
-    <section class="row">
-        <div class="col"></div>
-        <div class="col-lg-8">
-            <h1 class="">First of all.</h1>
-            <h3>We need understand how much calories do you need to ingest per day.</h3>
+    <section class="page-section portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="p-4'">First of all.</h1>
+                <h3>We need understand how much calories do you need to ingest per day.</h3>
+            </div>
             <div class="position-relative overflow-hidden p-5 p-md-7 m-md-5">
                 <div class="card">
                     <div class="card-header">
@@ -91,33 +93,65 @@
                     </div>
                 </div>
             </div>
-            <div id="resultado">
-                <div class="modal" tabindex="-1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Here are your results:</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>{{calories}} per day to lose weight</p>
-                                <p>{{calories}} per day to keep your weight</p>
-                                <p>{{caloriess}} per day to gain weight</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"
-                                    data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+        </div>
+        <div id="resultado">
+            <div class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Here are your results:</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{calories}} per day to lose weight</p>
+                            <p>{{calories}} per day to keep your weight</p>
+                            <p>{{caloriess}} per day to gain weight</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col"></div>
     </section>
-    <section class="row">
+    <section class="page-section bg-primary-subtle">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="p-4'">Are you drink enough?</h1>
+                <h3>2 litter per day can't be the right amount for you</h3>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    💧 Considering your weight, lets calculate how much water you need drink per day.
+                </div>
+                <div class="card-body">
+                    <form method="post" action="">
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="weight" class="form-label">How's your weight:</label>
+                                <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" />
+                            </div>
+                            <div class="col mb-3">
+                                <label for="age" class="form-label">Choose your activitity level:</label>
+                                <select id="age" class="form-select" aria-label="Default select example">
+                                    <option value="0">Sedentário</option>
+                                    <option value="10">Atividade leve - 3x semana</option>
+                                    <option value="20">Atividade moderada - 5x semana</option>
+                                    <option value="30">Atividade pesada - 6x semana</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p><input class="btn btn-primary" type="submit" name="Calcular" value="calcular"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section">
         <div class="col"></div>
         <div class="col col-lg-8">
             <h1>What this means?</h1>
@@ -175,11 +209,26 @@
         </div>
         <div class="col"></div>
     </section>
-    <div class="row">
-        <div class="col col-lg-8">
-            <p>Este site foi construido por <a href="https://github.com/evilfeeh" target="_blank"><b>Felipe Gonçalves dos Santos</b></a></p>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="mb-4">GITHUB</h4>
+                    <p class="pre-wrap lead mb-0"> If you enjoy this page <br> please consider <a href="https://github.com/evilfeeh" target="_blank"><b class="fw-bold text-white">follow me</b></a>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="mb-4">AROUND THE WEB</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.twitter.com/evilfeeh"><i class="fab fa-fw fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/felipegsantos"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/evilfeeh"><i class="fab fa-fw fa-instagram"></i></a>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="mb-4">ABOUT ME</h4>
+                    <p class="pre-wrap lead mb-0">Actually, I'm not a frontend developer, but I created this template to be useful with my backend :)</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </footer>
 </body>
 
 </html>
