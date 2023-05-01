@@ -47,40 +47,40 @@
                         Complete the current form before we move on
                     </div>
                     <div class="card-body">
-                        <form method="post" action="">
+                        <form method="post" action="/weight">
                             <div class="mb-3">
-                                <label for="gender" class="form-label">What is your birth gender?</label>
+                                <label class="form-label">What is your birth gender?</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="femaleGenderRadio" id="femaleInput">
-                                    <label class="form-check-label" for="femaleGenderRadio">
-                                        Female
+                                    <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault1" value="female">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                      Female
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="maleGenderRadio" id="maleInput" checked>
-                                    <label class="form-check-label" for="maleGenderRadio">
-                                        Male
+                                    <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault2" value="male" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                      Male
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col mb-3">
                                     <label for="weight" class="form-label">How's your weight:</label>
-                                    <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" />
+                                    <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" required/>
                                 </div>
                                 <div class="col mb-3">
                                     <label for="height" class="form-label">How's your height:</label>
-                                    <input id="height" type="text" class="form-control" name="height" placeholder="CM" />
+                                    <input id="height" type="text" class="form-control" name="height" placeholder="CM" required/>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col mb-3">
                                     <label for="age" class="form-label">How old are you:</label>
-                                    <input id="age" type="text" class="form-control" name="age" />
+                                    <input id="age" type="text" class="form-control" name="age" required/>
                                 </div>
                                 <div class="col mb-3">
-                                    <label for="age" class="form-label">Choose your activitity level:</label>
-                                    <select id="age" class="form-select" aria-label="Default select example">
+                                    <label for="phisicalAcitivityLevel" class="form-label">Choose your activitity level:</label>
+                                    <select id="phisicalAcitivityLevel" name="phisicalAcitivityLevel" class="form-select" aria-label="Default select example" required>
                                         <option value="200">Sedentário</option>
                                         <option value="600">Atividade leve - 3x semana</option>
                                         <option value="1000">Atividade moderada - 5x semana</option>
@@ -124,29 +124,31 @@
                 <h1 class="p-4'">Are you drink enough?</h1>
                 <h3>2 litter per day can't be the right amount for you</h3>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    💧 Considering your weight, lets calculate how much water you need drink per day.
-                </div>
-                <div class="card-body">
-                    <form method="post" action="">
-                        <div class="row">
-                            <div class="col mb-3">
-                                <label for="weight" class="form-label">How's your weight:</label>
-                                <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" />
+            <div class="position-relative overflow-hidden p-5 p-md-7 m-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        💧 Considering your weight, lets calculate how much water you need drink per day.
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="">
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <label for="weight" class="form-label">How's your weight:</label>
+                                    <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" />
+                                </div>
+                                <div class="col mb-3">
+                                    <label for="age" class="form-label">Choose your activitity level:</label>
+                                    <select id="age" class="form-select" aria-label="Default select example">
+                                        <option value="0">Sedentário</option>
+                                        <option value="10">Atividade leve - 3x semana</option>
+                                        <option value="20">Atividade moderada - 5x semana</option>
+                                        <option value="30">Atividade pesada - 6x semana</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col mb-3">
-                                <label for="age" class="form-label">Choose your activitity level:</label>
-                                <select id="age" class="form-select" aria-label="Default select example">
-                                    <option value="0">Sedentário</option>
-                                    <option value="10">Atividade leve - 3x semana</option>
-                                    <option value="20">Atividade moderada - 5x semana</option>
-                                    <option value="30">Atividade pesada - 6x semana</option>
-                                </select>
-                            </div>
-                        </div>
-                        <p><input class="btn btn-primary" type="submit" name="Calcular" value="calcular"></p>
-                    </form>
+                            <p><input class="btn btn-primary" type="submit" name="Calcular" value="calcular"></p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
