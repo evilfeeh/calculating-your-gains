@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server:start": "npx ts-node src/adapters/express/index.ts",
-    "server:dev": "ts-node-dev src/adapters/express/index.ts",
+    "start": "npx ts-node src/adapters/express/index.ts",
+    "start:dev": "ts-node-dev src/adapters/express/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
