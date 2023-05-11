@@ -46,13 +46,13 @@
                         <div class="mb-3">
                             <label class="form-label">What is your birth gender?</label>
                             <div class="form-check">
-                                <input v-model="female" class="form-check-input" type="radio" name="sex" id="flexRadioDefault1" value="female">
+                                <input v-model="sex" class="form-check-input" type="radio" id="flexRadioDefault1" value="female">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Female
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input v-model="male" class="form-check-input" type="radio" name="sex" id="flexRadioDefault2" value="male" checked>
+                                <input v-model="sex" class="form-check-input" type="radio" id="flexRadioDefault2" value="male">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Male
                                 </label>
@@ -83,30 +83,26 @@
                                 </select>
                             </div>
                         </div>
-                        <p><button @click="calculateWeight" class="btn btn-primary" name="Calcular"> Calculate</button></p>
+                        <p><button @click="calculateWeight" class="btn btn-primary" name="Calcular" id="calculate"> Calculate</button></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="resultado">
-            <div class="modal" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Here are your results:</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>{{ toLoseCalories }} per day to lose weight</p>
-                            <p>{{ toKeepCalories }} per day to keep your weight</p>
-                            <p>{{ toGainCalories }} per day to gain weight</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary"
-                                data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+        <div id="resultado" class="modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Here are your results:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{ toLoseCalories }} per day to lose weight</p>
+                        <p>{{ toKeepCalories }} per day to keep your weight</p>
+                        <p>{{ toGainCalories }} per day to gain weight</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -140,7 +136,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <p><input class="btn btn-primary" type="submit" name="Calcular" value="calcular"></p>
+                            <p><input class="btn btn-primary" type="submit" name="Calcular" value="calcular" ></p>
                         </form>
                     </div>
                 </div>
