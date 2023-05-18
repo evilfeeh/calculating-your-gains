@@ -24,12 +24,13 @@ export default class Weight implements WeightClass {
     this.heightMultiplicator = multiplicator[person.sex].height
     this.ageMultiplicator = multiplicator[person.sex].age
     this.factor = multiplicator[person.sex].factor
+    this.caloriesBase = 500
     this._calculateScore()
   }
 
   toKeep () {
     let scoreWithFactor = this.factor + this.score.weight + this.score.height + this.score.age
-    return phisicalActivityLevel[this.activityLevel as keyof {}] + scoreWithFactor
+    return this.activityLevel + scoreWithFactor
   }
 
   toLose () {
