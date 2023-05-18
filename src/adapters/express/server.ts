@@ -9,15 +9,13 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
 app.post('/weight', (req: Request, res: Response) => {
-  const { personData } = req.body
-  
+  const personData = req.body
   const weight = new Weight(personData)
   const result = {
     'keep': weight.toKeep(),
     'gain': weight.toGain(),
     'lose': weight.toLose()
   }
-
   res.status(200).send(result)
 })
 
