@@ -12,7 +12,8 @@ createApp({
       phisicalAcitivityLevel: '',
       toLoseCalories: '',
       toKeepCalories: '',
-      toGainCalories: ''
+      toGainCalories: '',
+      waterWeight: ''
     }
   },
   methods: {

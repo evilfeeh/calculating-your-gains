@@ -5,15 +5,15 @@ export default class FoodCaloriesIngestion implements foodCaloriesIngestion {
   dailyCalories: number
   meals: meal[]
   getFoodCatalog(): void {
-    throw new Error('Method not implemented.')
+
   }
   splitCalories(): void {
-    throw new Error('Method not implemented.')
+    
   }
   organizeMeals(): void {
-    throw new Error('Method not implemented.')
+    
   }
   sendMeals(): meal[] {
-    throw new Error('Method not implemented.')
+    return []
   }
 }

@@ -123,8 +123,8 @@
                         <form method="post" action="">
                             <div class="row">
                                 <div class="col mb-3">
-                                    <label for="weight" class="form-label">How's your weight:</label>
-                                    <input id="weight" type="text" class="form-control" name="weight" placeholder="KG" />
+                                    <label for="waterWeight" class="form-label">How's your weight:</label>
+                                    <input id="waterWeight" v-model="waterWeight" type="text" class="form-control" name="waterWeight" placeholder="KG" :value="weight"/>
                                 </div>
                                 <div class="col mb-3">
                                     <label for="age" class="form-label">Choose your activitity level:</label>
