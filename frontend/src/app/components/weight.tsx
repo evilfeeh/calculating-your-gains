@@ -9,10 +9,9 @@ export default function Weight () {
   const [value, setValue] = React.useState('1')
   return (
     <ChakraBaseProvider>
-      <Text>First of all.</Text>
       <Text>We need understand how much calories do you need to ingest per day.</Text>
+      <Text>Complete the current form before we move on</Text>
       <FormControl>
-        <Text>Complete the current form before we move on</Text>
         <FormLabel>What is your birth gender?</FormLabel>
         <RadioGroup onChange={setValue} value={value}>
           <Stack direction='row'>
@@ -20,17 +19,28 @@ export default function Weight () {
             <Radio value='2'>Male</Radio>
           </Stack>
         </RadioGroup>
-        <Input placeholder="How's your weight" size='md' id="weight" />
+      </FormControl>
+      <FormControl>
+        <FormLabel>How`s your weight</FormLabel>
+        <Input placeholder="CM" size='md' id="weight" />
+      </FormControl>
+      <FormControl>
+        <FormLabel>How`s your weight</FormLabel>
         <Input placeholder="How's your height" size='md' id="height" />
+      </FormControl>
+      <FormControl>
+        <FormLabel>How`s your weight</FormLabel>
         <Input placeholder="How old are you" size='md' id='age'></Input>
+      </FormControl>
+      <FormControl>
         <Select>
           <option value="200" selected>Sedentário</option>
           <option value="600">Atividade leve - 3x semana</option>
           <option value="1000">Atividade moderada - 5x semana</option>
           <option value="1200">Atividade pesada - 6x semana</option>
         </Select>
-        <Button name="Calcular" id="calculate"> Calculate</Button>
       </FormControl>
+      <Button name="Calcular" id="calculate"> Calculate</Button>
     </ChakraBaseProvider>
   )
 }
