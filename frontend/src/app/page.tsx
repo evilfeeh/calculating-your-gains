@@ -21,9 +21,11 @@ export default function Home() {
               </Center>
             </Box>
           </GridItem>
-          <GridItem h={700} colSpan={2} colStart={2} colEnd={4}>
-            <Box  h='500px' p={'5'} mt={'5'}>
+          <GridItem h={700} colSpan={2} colStart={2} colEnd={4} padding={4}>
+            <Box p={'5'} mt={'5'}>
+              <Box p={'5'} w='600px' h='500px' border='1px' borderRadius={10} borderColor={'#2D3748'} bgColor={'#171923'}>
                 <Weight />
+              </Box>
             </Box>
           </GridItem>
         </Grid>
