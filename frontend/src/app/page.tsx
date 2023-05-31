@@ -9,9 +9,7 @@ export default function Home() {
   return (
     <ChakraProvider>
         <Grid templateAreas={`'header'`} gap={5} templateColumns='repeat(2, 1fr)'>
-          <GridItem area={'header'} colSpan={4} rowSpan={1} bg={'green'}>
-            <Image src={logo} width={100} height={100} alt="double biceps" />
-            <Text>Calculating your gains</Text>
+          <GridItem area={'header'} colSpan={4} rowSpan={1} h={'120'}>
           </GridItem>
           <GridItem h={700} colSpan={2} colEnd={2}>
             <Box h='500px' p={'5'} mt={'5'} >
@@ -19,7 +17,7 @@ export default function Home() {
                 <Image src={logo} width={300} height={300} alt="double biceps"/>
               </Center>
               <Center>
-                <Text textStyle={'bold'} fontSize={'5xl'} as='b'>CALCULATING YOUR GAINS</Text>
+                <Text textStyle={'bold'} fontSize={'5xl'} as='b' color={'black'}>CALCULATING YOUR GAINS</Text>
               </Center>
             </Box>
           </GridItem>
@@ -28,7 +26,6 @@ export default function Home() {
                 <Weight />
             </Box>
           </GridItem>
-          <GridItem colSpan={4} bg={'purple'} rowSpan={1}>footer</GridItem>
         </Grid>
     </ChakraProvider>
   )
