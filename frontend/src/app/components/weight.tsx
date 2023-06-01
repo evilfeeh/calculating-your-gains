@@ -12,13 +12,6 @@ export default function Weight() {
       <Text fontSize={'sm'} textAlign={'center'}>This Calc will help you to figure out</Text>
       <Box>
         <FormControl>
-          <FormLabel fontSize={'1xl'}>What is your birth gender?</FormLabel>
-          <RadioGroup onChange={setValue} value={value}>
-            <Stack direction='row'>
-              <Radio value='1'>Female</Radio>
-              <Radio value='2'>Male</Radio>
-            </Stack>
-          </RadioGroup>
           <Input borderRadius={4} border='1px' mt={'5'} borderColor={'#276749'} placeholder="How`s your weight" size='md' id="weight" />
           <Input borderRadius={4} border='1px' mt={'5'} borderColor={'#276749'} placeholder="How's your height in CM" size='md' id="height" />
           <Input borderRadius={4} border='1px' mt={'5'} borderColor={'#276749'} placeholder="How old are you" size='md' id='age'></Input>
@@ -28,6 +21,13 @@ export default function Weight() {
             <option value="1000">Atividade moderada - 5x semana</option>
             <option value="1200">Atividade pesada - 6x seman</option>
           </Select>
+          <FormLabel mt={'5'} fontSize={'1xl'}>What is your birth gender?</FormLabel>
+          <RadioGroup onChange={setValue} value={value}>
+            <Stack direction='row'>
+              <Radio value='1'>Female</Radio>
+              <Radio value='2'>Male</Radio>
+            </Stack>
+          </RadioGroup>
           <Center>
             <Button colorScheme='teal' mt={'5'} variant='outline' size='md'> Calculate</Button>
           </Center>
