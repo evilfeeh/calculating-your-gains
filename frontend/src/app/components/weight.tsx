@@ -1,14 +1,13 @@
 "use client"
 import React from 'react'
-import { Text, Input, ChakraBaseProvider, FormControl, FormLabel, Stack, Box, Center } from '@chakra-ui/react'
+import { Text, Input, ChakraProvider, FormControl, FormLabel, Stack, Box, Center, Select } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import { Radio, RadioGroup } from '@chakra-ui/react'
-import { Select } from '@chakra-ui/react'
 
 export default function Weight() {
   const [value, setValue] = React.useState('1')
   return (
-    <ChakraBaseProvider>
+    <ChakraProvider>
       <Text fontSize={'4xl'} textAlign={'center'} >Are You Eating Enough?</Text>
       <Text fontSize={'sm'} textAlign={'center'}>This Calc will help you to figure out</Text>
       <Box mt={'5'}>
@@ -25,12 +24,12 @@ export default function Weight() {
         </Center>
         <Center mt={'4'}>
           <FormControl>
-            <Input padding={2} borderRadius={4} border='1px' borderColor={'#276749'} placeholder="How`s your WEIGHT" size='md' id="weight" />
+            <Input padding={2} borderRadius={4} border='1px' borderColor={'#276749'} placeholder="How`s your weight" size='md' id="weight" />
           </FormControl>
         </Center>
         <Center mt={'4'}>
           <FormControl>
-            <Input padding={2} borderRadius={4} border='1px' borderColor={'#276749'} placeholder="How's your HEIGHT in CM" size='md' id="height" />
+            <Input padding={2} borderRadius={4} border='1px' borderColor={'#276749'} placeholder="How's your height in CM" size='md' id="height" />
           </FormControl>
         </Center>
         <Center mt={'4'}>
@@ -40,19 +39,18 @@ export default function Weight() {
         </Center>
         <Center mt={'4'}>
           <FormControl>
-            <Select placeholder='How`s level week activity' variant='outline' border='1px' borderColor={'#276749'} size='lg'>
+            <Select padding={2} borderRadius={4} border='1px' borderColor={'#276749'}size='md'>
               <option value="200">Sedentário</option>
               <option value="600">Atividade leve - 3x semana</option>
               <option value="1000">Atividade moderada - 5x semana</option>
-              <option value="1200">Atividade pesada - 6x semana</option>
+              <option value="1200">Atividade pesada - 6x seman</option>
             </Select>
           </FormControl>
         </Center>
         <Center mt={'4'}>
-          <Button colorScheme='teal' variant='solid' size='xs' name="Calcular" id="calculate"> Calculate</Button>
+          <Button colorScheme='teal' variant='outline' size='md'> Calculate</Button>
         </Center>
-
       </Box>
-    </ChakraBaseProvider>
+    </ChakraProvider>
   )
 }
