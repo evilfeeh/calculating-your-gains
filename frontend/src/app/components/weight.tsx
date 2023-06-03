@@ -10,15 +10,25 @@ export default function Weight() {
   const [height, setHeight] = useState()
   const [age, setAge] = useState()
   const [phisicalAcitivityLevel, setPhisicalAcitivityLevel ] = useState()
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    console.log({
+    const data = JSON.stringify({
       sex,
       weight,
       height,
       age,
       phisicalAcitivityLevel
     })
+    const response = await fetch('http://localhost:5000/weight', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        "Access-Control-Allow-Origin": "*"
+      },
+      body: data,
+    })
+    const json = await response.json()
+    console.log(json)
   };
   return (
     <ChakraProvider>
