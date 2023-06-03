@@ -23,7 +23,7 @@ export default function Weight() {
   return (
     <ChakraProvider>
       <Text fontSize={'4xl'} textAlign={'center'} >Are You Eating Enough?</Text>
-      <Text fontSize={'sm'} textAlign={'center'}>This Calc will help you to figure out</Text>
+      <Text fontSize={'sm'} textAlign={'center'}>This Calculator will help you to figure out</Text>
       <Box>
         <form onSubmit={handleSubmit}>
           <FormControl isRequired>
@@ -71,15 +71,15 @@ export default function Weight() {
                 <option value="200">Sedentário</option>
                 <option value="600">Atividade leve - 3x semana</option>
                 <option value="1000">Atividade moderada - 5x semana</option>
-                <option value="1200">Atividade pesada - 6x seman</option>
+                <option value="1200">Atividade pesada - 6x semana</option>
             </Select>
             <FormLabel mt={'5'} fontSize={'1xl'}>What is your birth gender?</FormLabel>
             <RadioGroup
               onChange={setSex}
               value={sex}>
               <Stack direction='row'>
-                <Radio value='1'>Female</Radio>
-                <Radio value='2'>Male</Radio>
+                <Radio value='male'>Male</Radio>
+                <Radio value='female'>Female</Radio>
               </Stack>
             </RadioGroup>
             <Center>
