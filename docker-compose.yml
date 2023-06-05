@@ -1,18 +1,18 @@
 version: '3.7'
 services:
   backend:
-    build: /backend
+    container_name: backend
+    build: ./backend
+    ports:
+      - 5000:5000
+    volumes:
+      - ./backend/:/backend
+  frontend:
+    container_name: frontend
+    build: ./frontend
     ports:
       - 3000:3000
-    # volumes:
-    #   - /backend:/backend
-  # frontend:
-  database:
-    image: mongo
-    ports:
-      - 27017:27017
-    container_name: mongoDB
-    volumes: 
-    - ~/mongo/data:/data/db
+    volumes:
+      - ./frontend:/frontend
 networks:
   gym:
