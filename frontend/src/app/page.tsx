@@ -14,7 +14,7 @@ export default function Home() {
           <GridItem h={700} colSpan={2} colEnd={2}>
             <Box h='500px' p={'5'} mt={'5'} >
               <Center>
-                <Image src={logo} width={300} height={300} alt="double biceps"/>
+                <Image src={logo} priority  width={300} height={300} alt="double biceps"/>
               </Center>
               <Center>
                 <Text textStyle={'bold'} fontSize={'5xl'} as='b' color={'black'}>CALCULATING YOUR GAINS</Text>
