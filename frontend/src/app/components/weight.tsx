@@ -3,32 +3,23 @@ import React, { useState } from 'react'
 import { Text, Input, ChakraProvider, FormControl, FormLabel, Stack, Box, Center, Select } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import { Radio, RadioGroup } from '@chakra-ui/react'
+import results from './modal'
 
 export default function Weight() {
-  const [sex, setSex] = useState('1')
-  const [weight, setWeight] = useState()
-  const [height, setHeight] = useState()
-  const [age, setAge] = useState()
-  const [phisicalAcitivityLevel, setPhisicalAcitivityLevel ] = useState()
-  const handleSubmit = async (event: { preventDefault: () => void }) => {
+  const handleSubmit = async (event: { preventDefault: () => void, target: any }) => {
     event.preventDefault();
-    const data = JSON.stringify({
-      sex,
-      weight,
-      height,
-      age,
-      phisicalAcitivityLevel
-    })
+    const formData = new FormData(event.target)
+    const payload = JSON.stringify(Object.fromEntries(formData))
     const response = await fetch('http://localhost:5000/weight', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         "Access-Control-Allow-Origin": "*"
       },
-      body: data,
+      body: payload,
     })
     const json = await response.json()
-    console.log(json)
+    results(json)
   };
   return (
     <ChakraProvider>
@@ -39,14 +30,13 @@ export default function Weight() {
           <FormControl isRequired>
             <Input 
               borderRadius={4}
-              border='1px'
+              border='1px'  
               mt={'5'}
               borderColor={'#276749'}
               placeholder="How`s your weight"
               size='md'
-              id="weight"
+              name="weight"
               type='number'
-              onChange={ event => setWeight(event.currentTarget.value as any) }
             />
             <Input
               borderRadius={4}
@@ -55,9 +45,8 @@ export default function Weight() {
               borderColor={'#276749'}
               placeholder="How's your height in CM"
               size='md'
-              id="height"
+              name="height"
               type='number'
-              onChange={ event => setHeight(event.currentTarget.value as any) }
             />
             <Input
               borderRadius={4}
@@ -66,27 +55,24 @@ export default function Weight() {
               borderColor={'#276749'}
               placeholder="How old are you"
               size='md'
-              id='age'
+              name='age'
               type='number'
-              onChange={ event => setAge(event.currentTarget.value as any) }
             />
             <Select
-              id="phisicalAcitivityLevel"
+              name="phisicalAcitivityLevel"
               borderRadius={4}
               border='1px'
               mt={'5'}
               borderColor={'#276749'}
               size='md'
-              onChange={ event => setPhisicalAcitivityLevel(event.currentTarget.value as any) }>
-                <option value="200">Sedentário</option>
-                <option value="600">Atividade leve - 3x semana</option>
-                <option value="1000">Atividade moderada - 5x semana</option>
-                <option value="1200">Atividade pesada - 6x semana</option>
+            >
+                <option value={200}>Sedentário</option>
+                <option value={600}>Atividade leve - 3x semana</option>
+                <option value={1000}>Atividade moderada - 5x semana</option>
+                <option value={1200}>Atividade pesada - 6x semana</option>
             </Select>
             <FormLabel mt={'5'} fontSize={'1xl'}>What is your birth gender?</FormLabel>
-            <RadioGroup
-              onChange={setSex}
-              value={sex}>
+            <RadioGroup name="sex">
               <Stack direction='row'>
                 <Radio value='male'>Male</Radio>
                 <Radio value='female'>Female</Radio>
