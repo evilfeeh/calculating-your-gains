@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { Text, Input, ChakraProvider, FormControl, FormLabel, Stack, Box, Center, Select } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import { Radio, RadioGroup } from '@chakra-ui/react'
-import results from './modal'
 
 export default function Weight() {
   const handleSubmit = async (event: { preventDefault: () => void, target: any }) => {
@@ -18,8 +17,7 @@ export default function Weight() {
       },
       body: payload,
     })
-    const json = await response.json()
-    results(json)
+    const result = await response.json()
   };
   return (
     <ChakraProvider>
