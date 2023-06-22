@@ -9,8 +9,8 @@ import {
   Button,
   Text
 } from '@chakra-ui/react'
+
 export default function AlertResults({ results, isVisible, onClose }: any ) {
-  console.log(results.keep, results.lose, results.lose)
   return (
     <Modal isOpen={isVisible} onClose={onClose}>
     <ModalOverlay />
