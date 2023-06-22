@@ -1,10 +1,18 @@
 "use client"
 import React, { useState } from 'react'
-import { Text, Input, ChakraProvider, FormControl, FormLabel, Stack, Box, Center, Select } from '@chakra-ui/react'
+import { Text, Input, ChakraProvider, FormControl, FormLabel, Stack, Box, Center, Select, useDisclosure } from '@chakra-ui/react'
+import AlertResults from './alert'
 import { Button } from '@chakra-ui/react'
 import { Radio, RadioGroup } from '@chakra-ui/react'
 
 export default function Weight() {
+  const [result, setResult] = useState([])
+  const {
+    isOpen: isVisible,
+    onClose,
+    onOpen,
+  } = useDisclosure({ defaultIsOpen: false })
+
   const handleSubmit = async (event: { preventDefault: () => void, target: any }) => {
     event.preventDefault();
     const formData = new FormData(event.target)
@@ -17,8 +25,10 @@ export default function Weight() {
       },
       body: payload,
     })
-    const result = await response.json()
+    setResult(await response.json())
+    onOpen()
   };
+
   return (
     <ChakraProvider>
       <Text fontSize={'4xl'} textAlign={'center'} >Are You Eating Enough?</Text>
@@ -78,10 +88,11 @@ export default function Weight() {
             </RadioGroup>
             <Center>
               <Button type="submit" colorScheme='teal' mt={'5'} variant='outline' size='md'> Calculate</Button>
+              <AlertResults results={result} isVisible={isVisible} onClose={onClose}/>
             </Center>
           </FormControl>
         </form>
       </Box>
     </ChakraProvider>
   )
-}
+} 
