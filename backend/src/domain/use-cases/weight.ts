@@ -19,7 +19,7 @@ export default class Weight implements WeightClass {
 
   constructor(person: personData) {
     this.person = person
-    this.activityLevel = person.phisicalAcitivityLevel
+    this.activityLevel = parseInt(person.phisicalAcitivityLevel)
     this.weightMultiplicator = multiplicator[person.sex].weight
     this.heightMultiplicator = multiplicator[person.sex].height
     this.ageMultiplicator = multiplicator[person.sex].age
@@ -43,9 +43,9 @@ export default class Weight implements WeightClass {
 
   _calculateScore () {
     this.score = {
-      weight: this.person.weight * this.weightMultiplicator,
-      height: this.person.height * this.heightMultiplicator,
-      age: this.person.age * this.ageMultiplicator
+      weight: parseInt(this.person.weight) * this.weightMultiplicator,
+      height: parseInt(this.person.height) * this.heightMultiplicator,
+      age: parseInt(this.person.age) * this.ageMultiplicator
     }
   }
 }
