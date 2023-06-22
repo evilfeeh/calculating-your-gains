@@ -1,7 +1,7 @@
 export default interface personData {
   sex: "male" | "female";
-  weight: number;
-  age: number;
-  height: number;
-  phisicalAcitivityLevel: number;
+  weight: string;
+  age: string;
+  height: string;
+  phisicalAcitivityLevel: string;
 }
