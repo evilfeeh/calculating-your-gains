@@ -1,5 +1,6 @@
 import Weight from '../../domain/use-cases/weight'
 import Water from '../../domain/use-cases/water-use'
+import Creatine from '../../domain/use-cases/creatine'
 import express, { Request, Response } from 'express'
 import cors from 'cors'
 
@@ -27,7 +28,13 @@ app.post('/water', (req: Request, res: Response) => {
   const result = {
     'waterConsumption': water.calculateDailyQuantity()
   }
+  res.status(200).send(result)
+})
 
+app.post('/creatine', (req: Request, res: Response) => {
+  const { weight } = req.body
+  const creatine = new Creatine(weight)
+  const result = creatine.calculate();
   res.status(200).send(result)
 })
 
