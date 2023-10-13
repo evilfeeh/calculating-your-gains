@@ -1,4 +1,3 @@
-import phisicalActivityLevel from "../utils/phisical-activity-level"
 import WeightClass from "../interfaces/weight"
 import personData from "../interfaces/person-data"
 import multiplicator from "../utils/multiplicators"
