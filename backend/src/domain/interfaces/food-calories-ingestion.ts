@@ -6,7 +6,6 @@ export interface meal {
   group: string;
 }
 
-
 export interface foodCaloriesIngestion {
   mealQuantity: number;
   dailyCalories: number;
