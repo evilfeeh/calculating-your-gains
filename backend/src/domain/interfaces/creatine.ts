@@ -1,5 +1,5 @@
 export interface creatine {
   loadingPhase: number
   maintainancePhase: number
-  calculate(kilograms: number): any
+  main: (req: any, res: any) => any
 }

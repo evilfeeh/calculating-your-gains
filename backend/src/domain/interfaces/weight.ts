@@ -20,4 +20,5 @@ export default interface calculateClass {
   toLose: () => number;
   toGain: () => number;
   _calculateScore(): void
+  main: (req: any, res: any) => any
 }
