@@ -15,32 +15,30 @@ export default class Weight implements WeightClass {
     height: number;
     age: number;
   }
-
-  constructor(person: personData) {
-    this.person = person
-    this.activityLevel = parseInt(person.phisicalAcitivityLevel)
-    this.weightMultiplicator = multiplicator[person.sex].weight
-    this.heightMultiplicator = multiplicator[person.sex].height
-    this.ageMultiplicator = multiplicator[person.sex].age
-    this.factor = multiplicator[person.sex].factor
+  
+  main(req: any, res: any) {
+    this.person = req.body
     this.caloriesBase = 500
-    this._calculateScore()
+    this.calculateScore()
+    const result = {
+      'keep': this.toKeep(),
+      'gain': this.toKeep() + this.caloriesBase,
+      'lose': this.toKeep() - this.caloriesBase
+    }
+    res.status(200).send(result)
   }
-
+  
   toKeep () {
+    this.factor = multiplicator[this.person.sex].factor
+    this.activityLevel = parseInt(this.person.phisicalAcitivityLevel)
     let scoreWithFactor = this.factor + this.score.weight + this.score.height + this.score.age
     return this.activityLevel + scoreWithFactor
   }
-
-  toLose () {
-    return this.toKeep() - this.caloriesBase
-  }
-
-  toGain () {
-    return this.toKeep() + this.caloriesBase
-  }
-
-  _calculateScore () {
+  
+  calculateScore () {
+    this.weightMultiplicator = multiplicator[this.person.sex].weight
+    this.heightMultiplicator = multiplicator[this.person.sex].height
+    this.ageMultiplicator = multiplicator[this.person.sex].age
     this.score = {
       weight: parseInt(this.person.weight) * this.weightMultiplicator,
       height: parseInt(this.person.height) * this.heightMultiplicator,

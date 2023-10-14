@@ -4,13 +4,13 @@ export default class Creatine implements creatine {
   loadingPhase = 0.3
   maintainancePhase= 0.1
   kilograms: number
-  constructor(kilograms: number) {
-    this.kilograms = kilograms
-  }
-  calculate() {
-    return {
-      loadingPhase: this.kilograms * this.loadingPhase,
-      maintainancePhase: this.kilograms * this.maintainancePhase
-    }
+    
+  main (req: any, res: any) {
+    const { weight } = req.body
+    const result = {
+      loadingPhase: weight * this.loadingPhase,
+      maintainancePhase: weight * this.maintainancePhase
+    };
+    res.status(200).send(result)
   }
 }
