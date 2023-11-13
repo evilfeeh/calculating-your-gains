@@ -1,20 +1,20 @@
 import { waterClass } from '../interfaces/water'
 
 export default class Water implements waterClass {
-  weight: number
-  waterPerKg: 0.35
-  factor: number
+  waterPerKg = 35
+  factor = 750
 
   main (req: any, res: any) {
-    const { weight, factor } = req.body
+    const { weight, hoursOfExercise } = req.body
+    console.log(weight, hoursOfExercise)
     const result = {
-      'waterConsumption': this.calculateDailyQuantity(weight, factor)
+      'waterConsumption': this.calculateDailyQuantity(weight, hoursOfExercise)
     }
     res.status(200).send(result)
   }
 
-  calculateDailyQuantity (weight: number, factor: number) {
-    let result = (weight * (this.waterPerKg + factor))
+  calculateDailyQuantity (weight: number, hoursOfExercise: number) {
+    let result = ((weight * this.waterPerKg) + (this.factor * hoursOfExercise))
     return result
   }
 }
