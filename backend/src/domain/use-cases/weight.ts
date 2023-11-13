@@ -3,11 +3,11 @@ import personData from "../interfaces/person-data"
 import multiplicator from "../utils/multiplicators"
 
 export default class Weight implements WeightClass {
-  person: personData
-  weightMultiplicator: number
+  person: personData;
+  weightMultiplicator: number;
   heightMultiplicator: number;
   ageMultiplicator: number;
-  caloriesBase: 500; 
+  caloriesBase = 500; 
   factor: number;
   activityLevel: any;
   score: {
@@ -16,9 +16,8 @@ export default class Weight implements WeightClass {
     age: number;
   }
   
-  main(req: any, res: any) {
+  main (req: any, res: any) {
     this.person = req.body
-    this.caloriesBase = 500
     this.calculateScore()
     const result = {
       'keep': this.toKeep(),
