@@ -1,6 +1,5 @@
 export interface waterClass {
-  weight: number;
   waterPerKg: number;
-  factor: number;
-  calculateDailyQuantity: () => number;
+  calculateDailyQuantity: (weight: number, factor: number) => number;
+  main: (req: any, res: any) => any
 } 

@@ -1,42 +1,27 @@
 import Weight from '../../domain/use-cases/weight'
-import Water from '../../domain/use-cases/water-use'
+import Water from '../../domain/use-cases/water'
 import Creatine from '../../domain/use-cases/creatine'
-import express, { Request, Response } from 'express'
+import UserAuth from '../../app/user-auth'
+import express from 'express'
 import cors from 'cors'
 
 const app = express()
+const water = new Water()
+const weight = new Weight()
+const creatine = new Creatine()
+
+const userAuth = new UserAuth()
 
 app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
-app.post('/weight', (req: Request, res: Response) => {
-  const personData = req.body
-  const weight = new Weight(personData)
-  const result = {
-    'keep': weight.toKeep(),
-    'gain': weight.toGain(),
-    'lose': weight.toLose()
-  }
-  res.status(200).send(result)
-})
+app.post('/v1/auth', ( req, res ) => { userAuth.auth(req, res)})
 
-app.post('/water', (req: Request, res: Response) => {
-  const { weight, factor } = req.body
-  const water = new Water(weight, factor)
-  const result = {
-    'waterConsumption': water.calculateDailyQuantity()
-  }
-  res.status(200).send(result)
-})
-
-app.post('/creatine', (req: Request, res: Response) => {
-  const { weight } = req.body
-  const creatine = new Creatine(weight)
-  const result = creatine.calculate();
-  res.status(200).send(result)
-})
+app.post('/weight', userAuth.validate, (req, res) => { weight.main(req, res) })
+app.post('/water', userAuth.validate, (req, res) => { water.main(req, res) })
+app.post('/creatine', userAuth.validate, (req, res) => { creatine.main(req, res) })
 
 app.listen(process.env.PORT, () => {
   console.log(`listen http server on port: ${process.env.PORT}`)
