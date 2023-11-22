@@ -1,4 +1,4 @@
-import { waterClass } from '../interfaces/water'
+import { waterClass } from '../ports/water'
 
 export default class Water implements waterClass {
   waterPerKg = 35
