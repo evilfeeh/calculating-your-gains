@@ -1,6 +1,7 @@
 import { sign, verify } from 'jsonwebtoken';
 //add user database
 //add logger
+
 export default class UserAuth {
   async auth (req: any, res: any) {
     const user = req.body;
@@ -10,7 +11,7 @@ export default class UserAuth {
     }
 
     try {
-      const token = sign(user, process.env.JWT_SECRET, { expiresIn: '1 min' })
+      const token = sign(user, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES })
       res.json({ token })
     } catch (error) {
       res.status(500).send('Internal error server')
