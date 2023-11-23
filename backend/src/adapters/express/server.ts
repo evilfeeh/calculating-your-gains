@@ -1,7 +1,7 @@
 import Weight from '../../domain/use-cases/weight'
 import Water from '../../domain/use-cases/water'
 import Creatine from '../../domain/use-cases/creatine'
-import UserAuth from '../../app/user-auth'
+import UserAuth from '../../domain/utils/user-auth'
 import express from 'express'
 import cors from 'cors'
 
