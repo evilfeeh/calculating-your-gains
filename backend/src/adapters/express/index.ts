@@ -17,11 +17,22 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
-app.post('/v1/auth', ( req, res ) => { userAuth.auth(req, res)})
+app.post('/v1/auth', (req, res) => userAuth.auth(req, res))
 
-app.post('/weight', userAuth.validate, (req, res) => { weight.main(req, res) })
-app.post('/water', userAuth.validate, (req, res) => { water.main(req, res) })
-app.post('/creatine', userAuth.validate, (req, res) => { creatine.main(req, res) })
+app.post('/weight', userAuth.validate, (req, res) => {
+  const result = weight.main(req.body)
+  res.status(200).send(result)
+});
+
+app.post('/water', userAuth.validate, (req, res) => {
+  const result = water.main(req.body)
+  res.status(200).send(result)
+});
+
+app.post('/creatine', userAuth.validate, (req, res) => {
+  const result = creatine.main(req.body)
+  res.status(200).send(result)
+})
 
 app.listen(process.env.PORT, () => {
   console.log(`listen http server on port: ${process.env.PORT}`)
