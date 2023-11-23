@@ -1,4 +1,4 @@
-import { creatine } from '../ports/creatine'
+import { creatine } from '../../ports/creatine'
 
 export default class Creatine implements creatine {
   loadingPhase = 0.3

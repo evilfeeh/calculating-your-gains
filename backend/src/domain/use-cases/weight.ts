@@ -1,5 +1,5 @@
-import WeightClass from "../ports/weight"
-import personData from "../ports/person-data"
+import WeightClass from "../../ports/weight"
+import personData from "../../ports/person-data"
 import multiplicator from "../utils/multiplicators"
 
 export default class Weight implements WeightClass {

@@ -1,5 +1,5 @@
 import winston from 'winston';
-import loggerInterface from '../../domain/ports/logger'; 
+import loggerInterface from '../../ports/logger'; 
 
 export default class Logger implements loggerInterface {
   private readonly logger: any;
