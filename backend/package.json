@@ -2,10 +2,9 @@
   "name": "calculating-your-gains",
   "version": "1.0.0",
   "description": "",
-  "main": ".src/app/index.ts",
   "scripts": {
-    "start": "npx ts-node -r dotenv/config src/adapters/express/server.ts",
-    "start:dev": "ts-node-dev -r dotenv/config src/adapters/express/server.ts",
+    "start": "npx ts-node -r dotenv/config src/adapters/express",
+    "start:dev": "ts-node-dev -r dotenv/config src/adapters/express",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
