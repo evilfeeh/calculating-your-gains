@@ -1,5 +1,5 @@
-import WeightClass from "../interfaces/weight"
-import personData from "../interfaces/person-data"
+import WeightClass from "../../ports/weight"
+import personData from "../../ports/person-data"
 import multiplicator from "../utils/multiplicators"
 
 export default class Weight implements WeightClass {
@@ -16,15 +16,14 @@ export default class Weight implements WeightClass {
     age: number;
   }
   
-  main (req: any, res: any) {
-    this.person = req.body
+  main (params: any) {
+    this.person = params
     this.calculateScore()
-    const result = {
+    return {
       'keep': this.toKeep(),
       'gain': this.toKeep() + this.caloriesBase,
       'lose': this.toKeep() - this.caloriesBase
     }
-    res.status(200).send(result)
   }
   
   toKeep () {

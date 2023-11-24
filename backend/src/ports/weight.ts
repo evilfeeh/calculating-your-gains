@@ -18,5 +18,5 @@ export default interface calculateClass {
 
   toKeep: () => number;
   calculateScore(): void
-  main: (req: any, res: any) => any
+  main: (params: any) => any
 }
